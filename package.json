@@ -1,0 +1,32 @@
+{
+  "name": "eslint-config-adslot",
+  "version": "0.0.1",
+  "description": "ESLint configuration for Adslot",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adslot/eslint-config-adslot.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Adslot/eslint-config-adslot/issues"
+  },
+  "homepage": "https://github.com/Adslot/eslint-config-adslot#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "confusing-browser-globals": "^1.0.9",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  },
+  "peerDependencies": {
+    "babel-eslint": "10.x",
+    "eslint": "6.x"
+  }
+}
