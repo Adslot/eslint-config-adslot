@@ -3,16 +3,34 @@
   "version": "0.0.1",
   "description": "ESLint configuration for Adslot",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Adslot/eslint-config-adslot.git"
   },
-  "author": "",
+  "author": "Adslot",
+  "engines": {
+    "node": "12"
+  },
+  "keywords": [
+    "ESLint",
+    "eslint-config-adslot"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Adslot/eslint-config-adslot/issues"
   },
   "homepage": "https://github.com/Adslot/eslint-config-adslot#readme",
+  "scripts": {
+    "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
+    "preversion": "echo 'Releasing…' && npm ci",
+    "release:major": "npm version major -m 'build: release major version %s'",
+    "release:minor": "npm version minor -m 'build: release minor version %s'",
+    "release:patch": "npm version patch -m 'build: release patch version %s'",
+    "autorelease": "node scripts/release"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
