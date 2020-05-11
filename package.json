@@ -28,8 +28,7 @@
     "preversion": "echo 'Releasing…' && npm ci",
     "release:major": "npm version major -m 'build: release major version %s'",
     "release:minor": "npm version minor -m 'build: release minor version %s'",
-    "release:patch": "npm version patch -m 'build: release patch version %s'",
-    "autorelease": "node scripts/release"
+    "release:patch": "npm version patch -m 'build: release patch version %s'"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.30.0",
@@ -47,7 +46,5 @@
     "babel-eslint": "10.x",
     "eslint": "6.x"
   },
-  "devDependencies": {
-    "axios": "^0.19.2"
-  }
+  "devDependencies": {}
 }
