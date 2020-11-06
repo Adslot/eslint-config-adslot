@@ -1,7 +1,7 @@
 # eslint-config-adslot
 
 [![npm version](https://badge.fury.io/js/eslint-config-adslot.svg)](https://badge.fury.io/js/eslint-config-adslot)
-[![Build Status](https://api.travis-ci.org/Adslot/eslint-config-adslot.png)](http://travis-ci.org/Adslot/eslint-config-adslot)
+[![Build Status](https://github.com/Adslot/eslint-config-adslot/workflows/.github/workflows/node.js.yml/badge.svg)
 
 ESLint configuration for Adslot
 
