@@ -229,7 +229,7 @@ module.exports = {
       { groups: [['builtin', 'external', 'internal']] },
     ],
     'import/no-cycle': 'error',
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': ['error', { commonjs: true }],
 
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
     'react/forbid-foreign-prop-types': ['error', { allowInPropTypes: true }],
