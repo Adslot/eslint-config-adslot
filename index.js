@@ -6,19 +6,18 @@
 const restrictedGlobals = require('confusing-browser-globals');
 
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
 
   env: {
     browser: true,
     commonjs: true,
-    es6: true,
+    es2021: true,
     jest: true,
     node: true,
     mocha: true,
   },
 
   parserOptions: {
-    ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -28,6 +27,11 @@ module.exports = {
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      },
     },
   },
 
@@ -40,7 +44,7 @@ module.exports = {
     'chai-friendly',
   ],
 
-  extends: ['prettier', 'prettier/react'],
+  extends: ['prettier'],
 
   overrides: [
     {
@@ -58,7 +62,8 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
 
-      extends: ['prettier', 'prettier/@typescript-eslint'],
+      extends: ['prettier'],
+
       // If adding a typescript-eslint version of an existing ESLint rule,
       // make sure to disable the ESLint rule here.
       rules: {
