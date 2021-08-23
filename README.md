@@ -8,10 +8,10 @@ ESLint configuration for Adslot
 ## Install
 
 ```
-npm install -D eslint-config-adslot babel-eslint eslint
+npm install -D eslint-config-adslot @babel/eslint-parser eslint
 ```
 
-`eslint` and `babel-eslint` are both required peer dependencies
+`eslint` and `@babel/eslint-parser` are both required peer dependencies
 
 ## Setup
 
@@ -20,6 +20,18 @@ Add the following to your eslint config file, ususally `.eslintrc`,
 ```
 {
   "extends": "adslot"
+}
+```
+
+## Babel config
+
+When not using `babel.config.js` in project root direct, add the following to `eslintrc` file.
+
+```
+parserOptions: {
+  babelOptions: {
+    configFile: 'path/to/babelrc',
+  },
 }
 ```
 
