@@ -6,8 +6,6 @@
 const restrictedGlobals = require('confusing-browser-globals');
 
 module.exports = {
-  parser: '@babel/eslint-parser',
-
   env: {
     browser: true,
     commonjs: true,
@@ -18,6 +16,7 @@ module.exports = {
   },
 
   parserOptions: {
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -30,7 +29,7 @@ module.exports = {
     },
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs'],
       },
     },
   },
