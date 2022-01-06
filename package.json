@@ -31,8 +31,8 @@
     "release:patch": "npm version patch -m 'build: release patch version %s'"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
     "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
