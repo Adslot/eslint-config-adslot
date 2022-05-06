@@ -234,6 +234,7 @@ module.exports = {
     ],
     'import/no-cycle': 'error',
     'import/no-unresolved': ['error', { commonjs: true }],
+    'import/no-duplicates': 'error',
 
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
     'react/forbid-foreign-prop-types': ['error', { allowInPropTypes: true }],
