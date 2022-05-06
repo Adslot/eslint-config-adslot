@@ -108,7 +108,7 @@ module.exports = {
   rules: {
     // http://eslint.org/docs/rules/
     'array-callback-return': 'error',
-    'default-case': ['error', { commentPattern: '^no default$' }],
+    'default-case': ['error', {commentPattern: '^no default$'}],
     eqeqeq: ['error', 'smart'],
     'no-array-constructor': 'error',
     'no-caller': 'error',
@@ -133,7 +133,7 @@ module.exports = {
     'no-invalid-regexp': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
-    'no-labels': ['error', { allowLoop: true, allowSwitch: false }],
+    'no-labels': ['error', {allowLoop: true, allowSwitch: false}],
     'no-lone-blocks': 'error',
     'no-loop-func': 'error',
     'no-multi-str': 'error',
@@ -146,7 +146,7 @@ module.exports = {
     'no-obj-calls': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
-    'no-redeclare': ['error', { builtinGlobals: false }],
+    'no-redeclare': ['error', {builtinGlobals: false}],
     'no-regex-spaces': 'error',
     'no-restricted-syntax': ['error', 'WithStatement'],
     'no-script-url': 'error',
@@ -161,7 +161,7 @@ module.exports = {
     'no-undef': 'error',
     'no-restricted-globals': ['error'].concat(restrictedGlobals),
     'no-unreachable': 'error',
-    'no-shadow': ['error', { allow: ['cb', 'err', 'done', 'next'] }],
+    'no-shadow': ['error', {allow: ['cb', 'err', 'done', 'next']}],
     'no-console': 'error',
 
     'no-unused-expressions': 'off',
@@ -228,16 +228,38 @@ module.exports = {
     'import/first': 'error',
     'import/no-amd': 'error',
     'import/no-webpack-loader-syntax': 'error',
-    'import/order': [
-      'error',
-      { groups: [['builtin', 'external', 'internal']] },
-    ],
+    'import/order': ['error', {groups: [['builtin', 'external', 'internal']]}],
     'import/no-cycle': 'error',
-    'import/no-unresolved': ['error', { commonjs: true }],
+    'import/no-unresolved': ['error', {commonjs: true}],
     'import/no-duplicates': 'error',
 
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
+    'jsx-a11y/accessible-emoji': 'error',
+    'jsx-a11y/alt-text': 'error',
+    'jsx-a11y/anchor-has-content': 'error',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        aspects: ['noHref', 'invalidHref'],
+      },
+    ],
+    'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
+    'jsx-a11y/aria-props': 'error',
+    'jsx-a11y/aria-proptypes': 'error',
+    'jsx-a11y/aria-role': ['error', {ignoreNonDOM: true}],
+    'jsx-a11y/aria-unsupported-elements': 'error',
+    'jsx-a11y/heading-has-content': 'error',
+    'jsx-a11y/iframe-has-title': 'error',
+    'jsx-a11y/img-redundant-alt': 'error',
+    'jsx-a11y/no-access-key': 'error',
+    'jsx-a11y/no-distracting-elements': 'error',
+    'jsx-a11y/no-redundant-roles': 'error',
+    'jsx-a11y/role-has-required-aria-props': 'error',
+    'jsx-a11y/role-supports-aria-props': 'error',
+    'jsx-a11y/scope': 'error',
+
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'react/forbid-foreign-prop-types': ['error', { allowInPropTypes: true }],
+    'react/forbid-foreign-prop-types': ['error', {allowInPropTypes: true}],
     'react/jsx-no-comment-textnodes': 'error',
     'react/jsx-no-duplicate-props': 'error',
     'react/jsx-no-target-blank': 'error',
@@ -281,31 +303,6 @@ module.exports = {
     // Prevent using this.state within a this.setState
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md
     'react/no-access-state-in-setstate': 'error',
-
-    // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
-    'jsx-a11y/accessible-emoji': 'error',
-    'jsx-a11y/alt-text': 'error',
-    'jsx-a11y/anchor-has-content': 'error',
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        aspects: ['noHref', 'invalidHref'],
-      },
-    ],
-    'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
-    'jsx-a11y/aria-props': 'error',
-    'jsx-a11y/aria-proptypes': 'error',
-    'jsx-a11y/aria-role': ['error', { ignoreNonDOM: true }],
-    'jsx-a11y/aria-unsupported-elements': 'error',
-    'jsx-a11y/heading-has-content': 'error',
-    'jsx-a11y/iframe-has-title': 'error',
-    'jsx-a11y/img-redundant-alt': 'error',
-    'jsx-a11y/no-access-key': 'error',
-    'jsx-a11y/no-distracting-elements': 'error',
-    'jsx-a11y/no-redundant-roles': 'error',
-    'jsx-a11y/role-has-required-aria-props': 'error',
-    'jsx-a11y/role-supports-aria-props': 'error',
-    'jsx-a11y/scope': 'error',
 
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
