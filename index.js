@@ -41,6 +41,7 @@ module.exports = {
     'react-hooks',
     'lodash',
     'chai-friendly',
+    'jest',
   ],
 
   extends: ['prettier'],
@@ -321,5 +322,10 @@ module.exports = {
     'lodash/chain-style': ['error', 'as-needed'],
     'lodash/chaining': ['error', 'always'],
     'lodash/path-style': ['error', 'string'],
+
+    // https://github.com/jest-community/eslint-plugin-jest
+    // could also be used in non-jest tests
+    'jest/no-disabled-tests': 'error',
+    'jest/no-focused-tests': 'error',
   },
 };
