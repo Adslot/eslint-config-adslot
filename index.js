@@ -178,8 +178,9 @@ module.exports = {
     'no-unused-vars': [
       'error',
       {
-        args: 'none',
+        args: 'all',
         ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
       },
     ],
     'no-use-before-define': [
