@@ -42,6 +42,7 @@ module.exports = {
     'lodash',
     'chai-friendly',
     'jest',
+    'adslot',
   ],
 
   extends: ['prettier'],
@@ -328,5 +329,7 @@ module.exports = {
     // could also be used in non-jest tests
     'jest/no-disabled-tests': 'error',
     'jest/no-focused-tests': 'error',
+
+    'adslot/no-snapshot': 'error',
   },
 };
