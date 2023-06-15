@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-adslot",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "ESLint configuration for Adslot",
   "main": "index.js",
   "files": [
