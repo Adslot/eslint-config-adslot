@@ -330,6 +330,6 @@ module.exports = {
     'jest/no-disabled-tests': 'error',
     'jest/no-focused-tests': 'error',
 
-    'adslot/no-snapshot': 'error',
+    "no-snapshot-testing/no-snapshot-testing": "error",
   },
 };

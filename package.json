@@ -4,8 +4,7 @@
   "description": "ESLint configuration for Adslot",
   "main": "index.js",
   "files": [
-    "index.js",
-    "plugin"
+    "index.js"
   ],
   "repository": {
     "type": "git",
@@ -42,6 +41,7 @@
     "eslint-plugin-jest": "^27.4.2",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-no-snapshot-testing": "^1.0.61",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0"
   },
