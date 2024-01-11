@@ -42,7 +42,7 @@ module.exports = {
     'lodash',
     'chai-friendly',
     'jest',
-    'adslot',
+    'no-snapshot-testing',
   ],
 
   extends: ['prettier'],
