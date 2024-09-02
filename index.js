@@ -182,6 +182,7 @@ module.exports = {
         args: 'all',
         ignoreRestSiblings: true,
         argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
       },
     ],
     'no-use-before-define': [
@@ -330,6 +331,6 @@ module.exports = {
     'jest/no-disabled-tests': 'error',
     'jest/no-focused-tests': 'error',
 
-    "no-snapshot-testing/no-snapshot-testing": "error",
+    'no-snapshot-testing/no-snapshot-testing': 'error',
   },
 };
