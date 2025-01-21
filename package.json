@@ -31,20 +31,20 @@
     "release:patch": "npm version patch -m 'build: release patch version %s'"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
     "confusing-browser-globals": "^1.0.11",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-chai-friendly": "^0.7.4",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-chai-friendly": "^1.0.1",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jest": "^28.8.3",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-lodash": "^8.0.0",
     "eslint-plugin-no-snapshot-testing": "^1.0.61",
-    "eslint-plugin-react": "^7.37.1",
-    "eslint-plugin-react-hooks": "^4.6.2"
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0"
   },
   "peerDependencies": {
-    "eslint": "^8.57.1"
+    "eslint": "^9.18.0"
   }
 }
