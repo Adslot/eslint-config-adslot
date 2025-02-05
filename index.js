@@ -189,7 +189,7 @@ module.exports = [
         'error',
         { groups: [['builtin', 'external', 'internal']] },
       ],
-      'import/no-cycle': 'error',
+      'import/no-cycle': ['error', { ignoreExternal: true }],
       'import/no-unresolved': ['error', { commonjs: true }],
       'import/no-duplicates': 'error',
 
