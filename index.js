@@ -19,7 +19,7 @@ const globals = require('globals');
 module.exports = [
   eslintConfigPrettier,
   {
-    files: ['**/*.js?(x)', '**/*.?(c|m)js'],
+    files: ['**/*.js?(x)', '**/*.?(c|m)js', '**/*.ts?(x)'],
     languageOptions: {
       globals: {
         ...globals.browser,
