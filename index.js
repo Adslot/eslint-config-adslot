@@ -1,33 +1,27 @@
-// The ESLint browser environment defines all browser globals as valid,
-// even though most people don't know some of them exist (e.g. `name` or `status`).
-// This is dangerous as it hides accidentally undefined variables.
-// We blacklist the globals that we deem potentially confusing.
-// To use them, explicitly reference them, e.g. `window.name` or `window.status`.
-const restrictedGlobals = require('confusing-browser-globals');
-const eslintConfigPrettier = require('eslint-config-prettier');
-const eslintPluginImport = require('eslint-plugin-import');
-const eslintPluginJsxA11y = require('eslint-plugin-jsx-a11y');
-const eslintPluginReact = require('eslint-plugin-react');
-const eslintPluginReactHooks = require('eslint-plugin-react-hooks');
-const eslintPluginLodash = require('eslint-plugin-lodash');
-const eslintPluginChaiFriendly = require('eslint-plugin-chai-friendly');
-const eslintPluginJest = require('eslint-plugin-jest');
-const eslintPluginNoSnapshotTesting = require('eslint-plugin-no-snapshot-testing');
-const eslintPluginTypescript = require('@typescript-eslint/eslint-plugin');
-const globals = require('globals');
+import { defineConfig } from 'eslint/config';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import eslintPluginLodash from 'eslint-plugin-lodash';
+import eslintPluginChaiFriendly from 'eslint-plugin-chai-friendly';
+import eslintPluginJest from 'eslint-plugin-jest';
+import eslintPluginNoSnapshotTesting from 'eslint-plugin-no-snapshot-testing';
+import eslintTypescriptParser from '@typescript-eslint/parser';
+import eslintPluginTypescript from '@typescript-eslint/eslint-plugin';
+import globals from 'globals';
 
-module.exports = [
+export default defineConfig([
   eslintConfigPrettier,
   {
-    files: ['**/*.js?(x)', '**/*.?(c|m)js', '**/*.ts?(x)'],
+    files: ['**/*.{js,jsx,cjs,mjs,ts,tsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.commonjs,
-        ...globals.es2021,
-        ...globals.jest,
         ...globals.node,
-        ...globals.mocha,
+        ...globals.es2021,
       },
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -44,22 +38,19 @@ module.exports = [
       },
       'import/resolver': {
         node: {
-          extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs'],
+          extensions: ['.ts', '.tsx', '.cjs', '.js', '.jsx', '.mjs'],
         },
       },
     },
     plugins: {
-      'import': eslintPluginImport,
+      import: eslintPluginImport,
       'jsx-a11y': eslintPluginJsxA11y,
-      'react': eslintPluginReact,
+      react: eslintPluginReact,
       'react-hooks': eslintPluginReactHooks,
-      'lodash': eslintPluginLodash,
+      lodash: eslintPluginLodash,
       'chai-friendly': eslintPluginChaiFriendly,
-      'jest': eslintPluginJest,
-      'no-snapshot-testing': eslintPluginNoSnapshotTesting,
     },
-    // NOTE: When adding rules here, you need to make sure they are compatible with
-    // `typescript-eslint`, as some rules such as `no-array-constructor` aren't compatible.
+
     rules: {
       // http://eslint.org/docs/rules/
       'array-callback-return': 'error',
@@ -114,7 +105,6 @@ module.exports = [
       'no-this-before-super': 'error',
       'no-throw-literal': 'error',
       'no-undef': 'error',
-      'no-restricted-globals': ['error'].concat(restrictedGlobals),
       'no-unreachable': 'error',
       'no-shadow': ['error', { allow: ['cb', 'err', 'done', 'next'] }],
       'no-console': 'error',
@@ -240,7 +230,6 @@ module.exports = [
       'react/no-access-state-in-setstate': 'error',
 
       // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
-      'jsx-a11y/accessible-emoji': 'error',
       'jsx-a11y/alt-text': 'error',
       'jsx-a11y/anchor-has-content': 'error',
       'jsx-a11y/anchor-is-valid': [
@@ -278,28 +267,14 @@ module.exports = [
       'lodash/chain-style': ['error', 'as-needed'],
       'lodash/chaining': ['error', 'always'],
       'lodash/path-style': ['error', 'string'],
-
-      // https://github.com/jest-community/eslint-plugin-jest
-      // could also be used in non-jest tests
-      'jest/no-disabled-tests': 'error',
-      'jest/no-focused-tests': 'error',
-
-      'no-snapshot-testing/no-snapshot-testing': 'error',
     },
   },
   {
     files: ['**/*.ts?(x)'],
     languageOptions: {
-      ecmaVersion: 2018,
+      ecmaVersion: 'latest',
       sourceType: 'module',
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        // typescript-eslint specific options
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
+      parser: eslintTypescriptParser,
     },
     plugins: {
       '@typescript-eslint': eslintPluginTypescript,
@@ -317,9 +292,7 @@ module.exports = [
 
       // Add TypeScript specific rules (and turn off ESLint equivalents)
       '@typescript-eslint/consistent-type-assertions': 'error',
-      'no-array-constructor': 'off',
-      '@typescript-eslint/no-array-constructor': 'error',
-      '@typescript-eslint/no-namespace': 'error',
+
       'no-use-before-define': 'off',
       '@typescript-eslint/no-use-before-define': [
         'error',
@@ -330,6 +303,7 @@ module.exports = [
           typedefs: false,
         },
       ],
+
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -339,9 +313,28 @@ module.exports = [
           caughtErrors: 'none',
         },
       ],
+
       'no-useless-constructor': 'off',
       '@typescript-eslint/no-useless-constructor': 'error',
-      '@typescript-eslint/no-explicit-any': 'error',
+
+      '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
-];
+  {
+    files: ['**/*.{spec,test}.{ts,tsx,js,jsx}'],
+    ...eslintPluginJest.configs['flat/recommended'],
+    plugins: {
+      'no-snapshot-testing': eslintPluginNoSnapshotTesting,
+      jest: eslintPluginJest,
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      'no-snapshot-testing/no-snapshot-testing': 'error',
+
+      // https://github.com/jest-community/eslint-plugin-jest
+      // could also be used in non-jest tests
+      'jest/no-disabled-tests': 'error',
+      'jest/no-focused-tests': 'error',
+    },
+  },
+]);

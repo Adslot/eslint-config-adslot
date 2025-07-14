@@ -14,6 +14,7 @@
   "engines": {
     "node": "^22"
   },
+  "type": "module",
   "keywords": [
     "ESLint",
     "eslint-config-adslot"
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/Adslot/eslint-config-adslot#readme",
   "scripts": {
+    "test": "eslint index.js -c index.js --rule 'import/no-unresolved: off'",
     "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
     "preversion": "echo 'Releasing…' && npm ci",
     "release:major": "npm version major -m 'build: release major version %s'",
@@ -31,9 +33,6 @@
     "release:patch": "npm version patch -m 'build: release patch version %s'"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.35.1",
-    "@typescript-eslint/parser": "^8.35.1",
-    "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-chai-friendly": "^1.1.0",
     "eslint-plugin-import": "^2.32.0",
@@ -42,9 +41,10 @@
     "eslint-plugin-lodash": "^8.0.0",
     "eslint-plugin-no-snapshot-testing": "^1.0.61",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0"
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "typescript-eslint": "^8.36.0"
   },
   "peerDependencies": {
-    "eslint": "^9.30.0"
+    "eslint": "^9.31.0"
   }
 }
