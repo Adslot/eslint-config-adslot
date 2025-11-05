@@ -12,7 +12,7 @@
   },
   "author": "Adslot",
   "engines": {
-    "node": "^22"
+    "node": "^24"
   },
   "type": "module",
   "keywords": [
